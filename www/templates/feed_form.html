@@ -1,0 +1,33 @@
+<ion-view title="Report">
+	<ion-nav-bar class="bar-stable nav-title-slide-ios7">
+		<ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+			Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+  <ion-content has-header="true" padding="true">
+    <div class="list">
+	  <label class="item item-input item-select">
+	    <div class="input-label">
+	      Location
+	    </div>
+	    <select ng-model="feed.location">
+	      <option ng-repeat="location in locations">{{location.name}}</option>
+	    </select>
+	  </label>
+	  <label class="item item-input item-select">
+	    <div class="input-label">
+	      Problem
+	    </div>
+	    <select ng-model="feed.problem" required>
+	      <option ng-repeat="problem in problems">{{problem}}</option>
+	    </select>
+	  </label>
+
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Description</span>
+	    <textarea rows="4" ng-model="feed.description" placeholder="Description"></textarea>
+	  </label>
+	  <button class="button button-block button-positive" ng-click="SubmitFeed()">Submit</button>
+	</div>
+	</ion-content>
+</ion-view>
